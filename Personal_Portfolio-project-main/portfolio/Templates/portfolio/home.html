@@ -1,0 +1,47 @@
+<style>
+    body{
+        font-family: 'Courier New', Courier, monospace;
+        background-color: black;
+        color: white;
+    }
+    div{
+        align-items: center;
+        width: 80%;
+        margin: 5% auto;
+    }
+
+    #photo{
+        width: 80%;
+        border: none;
+        box-shadow: 0 4px 15px rgb(254, 253, 253);
+    }
+    #a_link{
+        margin-top: 15px;
+        background-color: rgba(175, 206, 234, 0.971);
+        cursor: pointer;
+        color: black;
+        padding: 10px;
+        border: 1px solid;
+        border-radius: 5px;
+        display: inline-block;
+        box-shadow: 0 4px 15px rgba(254, 253, 253);
+        font-family: 'Times New Roman', Times, serif;
+    }
+</style>
+
+<div>
+    <h1 align="center">HOME PAGE</h1>
+    <br>
+    {% for Project in Projects %}
+    <h1>{{Project.title}}</h1>
+    <br>
+    <h2>{{Project.description}}</h2>
+    <br>
+    <img src="{{Project.image.url}}" alt="" id="photo">
+    <br>
+    {% if Project.url %}
+    <a href="{{Project.url}}">link</a>
+    {% endif %}
+    {% endfor %}
+    <a href="admin/" id="a_link">admin</a>
+</div>
